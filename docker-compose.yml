@@ -9,7 +9,9 @@ x-db-credentials: &db-credentials                             # Use the default 
 services:
   # listmonk app
   app:
-    image: listmonk/listmonk:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: listmonk_app
     restart: unless-stopped
     ports:
